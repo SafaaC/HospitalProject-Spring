@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+  	http://www.springframework.org/schema/beans 
+  	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="myhospital" class="com.ty.Hospital">
+		<property name="id" value="101"></property>
+		<property name="name" value="Arimala"></property>
+		<property name="website" value="www.arimala.com"></property>
+		<property name="branch" ref="mybranch"></property>
+	</bean>
+	<bean id="mybranch" class="com.ty.Branch">
+		<property name="id" value="1"></property>
+		<property name="name" value="Kanhangad"></property>
+		<property name="phno" value="98265423"></property>
+		<property name="dname">
+			<list>
+				<value>Gynac</value>
+				<value>Pediac</value>
+				<value>Dental</value>
+			</list>
+		</property>
+		<property name="person" ref="myperson"></property>
+	</bean>
+	<bean id="myperson" class="com.ty.Person">
+		<property name="id" value="1001"></property>
+		<property name="name" value="Safaa"></property>
+		<property name="age" value="22"></property>
+		<property name="diseaseCost">
+			<map>
+				<entry>
+					<key>
+						<value>Common_Cold</value>
+					</key>
+					<value>500.0</value>
+				</entry>
+				<entry>
+					<key>
+						<value>Asthma</value>
+					</key>
+					<value>1000.0</value>
+				</entry>
+				<entry>
+					<key>
+						<value>Apendix</value>
+					</key>
+					<value>30000.0</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+
+
+</beans>
